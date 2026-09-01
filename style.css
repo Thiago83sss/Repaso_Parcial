@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: #1e293b;
+    color: white;
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(28px, 5vw, 50px);
+}
+
+.hero p {
+    margin: 0;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+}
+
+.menu a {
+    padding: 8px 12px;
+    color: #222;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.menu a:hover {
+    background: #e5e7eb;
+}
+
+.apartado {
+    margin: 30px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.apartado h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.apartado h3 {
+    margin-top: 25px;
+}
+
+pre {
+    padding: 18px;
+    overflow-x: auto;
+    background: #111827;
+    color: #f9fafb;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+}
+
+.grid > div {
+    padding: 12px;
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+.chuleta {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.lista {
+    line-height: 2;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #1e293b;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .apartado {
+        padding: 20px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}

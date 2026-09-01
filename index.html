@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso Diseño Web</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="hero">
+        <h1>REPASO DISEÑO Y DESARROLLO WEB</h1>
+        <p>HTML · CSS · FLEXBOX · GRID · BOOTSTRAP · RESPONSIVE · THREE.JS</p>
+    </header>
+
+    <nav class="menu">
+        <a href="#html">HTML</a>
+        <a href="#css">CSS</a>
+        <a href="#flex">Flexbox</a>
+        <a href="#grid">Grid</a>
+        <a href="#bootstrap">Bootstrap</a>
+        <a href="#responsive">Responsive</a>
+        <a href="#three">Three.js</a>
+        <a href="#chuleta">Chuleta</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="html" class="apartado">
+            <h2>1. HTML — Estructura</h2>
+
+            <h3>Estructura básica</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;Encabezado&lt;/header&gt;
+    &lt;nav&gt;Menú&lt;/nav&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h1&gt;Título&lt;/h1&gt;
+            &lt;p&gt;Texto&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;Pie de página&lt;/footer&gt;
+
+    &lt;script type="module" src="main.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <h3>Etiquetas esenciales</h3>
+            <div class="grid">
+                <div><b>&lt;h1&gt;-&lt;h6&gt;</b> → títulos</div>
+                <div><b>&lt;p&gt;</b> → párrafos</div>
+                <div><b>&lt;a&gt;</b> → enlaces</div>
+                <div><b>&lt;img&gt;</b> → imágenes</div>
+                <div><b>&lt;button&gt;</b> → botones</div>
+                <div><b>&lt;div&gt;</b> → contenedor</div>
+                <div><b>&lt;span&gt;</b> → texto inline</div>
+                <div><b>&lt;ul&gt; / &lt;ol&gt; / &lt;li&gt;</b> → listas</div>
+                <div><b>&lt;form&gt;</b> → formularios</div>
+                <div><b>&lt;input&gt;</b> → entradas</div>
+                <div><b>&lt;textarea&gt;</b> → texto largo</div>
+                <div><b>&lt;select&gt;</b> → opciones</div>
+                <div><b>&lt;table&gt;</b> → tablas</div>
+                <div><b>&lt;video&gt;</b> → video</div>
+                <div><b>&lt;audio&gt;</b> → audio</div>
+                <div><b>&lt;iframe&gt;</b> → contenido externo</div>
+                <div><b>&lt;header&gt;</b> → encabezado</div>
+                <div><b>&lt;nav&gt;</b> → navegación</div>
+                <div><b>&lt;main&gt;</b> → contenido principal</div>
+                <div><b>&lt;section&gt;</b> → sección</div>
+                <div><b>&lt;article&gt;</b> → artículo</div>
+                <div><b>&lt;aside&gt;</b> → lateral</div>
+                <div><b>&lt;footer&gt;</b> → pie</div>
+            </div>
+
+            <h3>Imágenes</h3>
+            <pre><code>&lt;img src="img/foto.jpg" alt="Descripción"&gt;</code></pre>
+
+            <h3>Enlaces</h3>
+            <pre><code>&lt;a href="https://google.com"&gt;Google&lt;/a&gt;
+&lt;a href="https://google.com" target="_blank"&gt;Nueva pestaña&lt;/a&gt;</code></pre>
+
+            <h3>Formularios</h3>
+            <pre><code>&lt;form&gt;
+    &lt;label&gt;Nombre&lt;/label&gt;
+    &lt;input type="text" placeholder="Nombre"&gt;
+    &lt;input type="email"&gt;
+    &lt;input type="password"&gt;
+    &lt;input type="number"&gt;
+    &lt;input type="date"&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;input type="radio"&gt;
+    &lt;textarea&gt;&lt;/textarea&gt;
+
+    &lt;select&gt;
+        &lt;option&gt;Colombia&lt;/option&gt;
+        &lt;option&gt;España&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <h3>Multimedia</h3>
+            <pre><code>&lt;video controls&gt;
+    &lt;source src="video.mp4"&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3"&gt;
+&lt;/audio&gt;
+
+&lt;iframe src="https://www.youtube.com/embed/ID"&gt;&lt;/iframe&gt;</code></pre>
+        </section>
+
+        <section id="css" class="apartado">
+            <h2>2. CSS — Apariencia</h2>
+
+            <h3>Selectores</h3>
+            <pre><code>p { }                  /* etiqueta */
+.clase { }            /* clase */
+#id { }               /* ID */
+div p { }             /* descendiente */
+div > p { }           /* hijo directo */
+button:hover { }      /* mouse encima */
+input:focus { }       /* elemento seleccionado */</code></pre>
+
+            <h3>Tipografías</h3>
+            <pre><code>font-family: Arial, sans-serif;
+font-size: 20px;
+font-weight: bold;
+font-style: italic;
+line-height: 1.5;
+letter-spacing: 2px;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;</code></pre>
+
+            <h3>Colores y fondos</h3>
+            <pre><code>color: #333;
+background-color: black;
+
+background-image: url("fondo.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+background: linear-gradient(90deg, red, blue);
+background: radial-gradient(circle, red, blue);</code></pre>
+
+            <h3>Box Model</h3>
+            <p><b>Margin</b> = espacio afuera · <b>Padding</b> = espacio adentro · <b>Border</b> = borde.</p>
+            <pre><code>margin: 20px;
+margin: 10px 20px;
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 40px;
+
+margin: 0 auto; /* centrar */
+
+padding: 20px;
+padding: 10px 20px;
+
+border: 2px solid black;
+border-radius: 10px;
+
+box-sizing: border-box;</code></pre>
+
+            <h3>Tamaños y unidades</h3>
+            <pre><code>width: 300px;
+height: 200px;
+width: 100%;
+height: 100vh;
+max-width: 1200px;
+min-height: 500px;
+
+/* px = píxeles
+   %  = porcentaje
+   vw = ancho de ventana
+   vh = alto de ventana
+   rem = relativo a fuente raíz
+   em = relativo al elemento */</code></pre>
+
+            <h3>Display</h3>
+            <pre><code>display: block;
+display: inline;
+display: inline-block;
+display: none;
+display: flex;
+display: grid;</code></pre>
+
+            <h3>Position</h3>
+            <pre><code>position: static;
+position: relative;
+position: absolute;
+position: fixed;
+position: sticky;
+
+.padre {
+    position: relative;
+}
+
+.hijo {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+z-index: 10;</code></pre>
+
+            <h3>Efectos</h3>
+            <pre><code>box-shadow: 0 5px 15px rgba(0,0,0,.2);
+text-shadow: 2px 2px 5px gray;
+opacity: .5;
+cursor: pointer;
+
+transition: .3s;
+transform: scale(1.1);
+transform: rotate(45deg);
+transform: translateX(20px);
+
+button:hover {
+    background: blue;
+}</code></pre>
+
+            <h3>Imágenes</h3>
+            <pre><code>img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* cover   = llena y recorta
+   contain = muestra completa */</code></pre>
+
+            <h3>Variables CSS</h3>
+            <pre><code>:root {
+    --color-principal: #3498db;
+    --espacio: 20px;
+}
+
+button {
+    background: var(--color-principal);
+    padding: var(--espacio);
+}</code></pre>
+
+            <h3>Pseudo-elementos</h3>
+            <pre><code>.elemento::before {
+    content: "";
+}
+
+.elemento::after {
+    content: "";
+}</code></pre>
+        </section>
+
+        <section id="flex" class="apartado">
+            <h2>3. FLEXBOX — Alineación</h2>
+            <p><b>FLEX = organizar elementos principalmente en una dirección.</b></p>
+            <pre><code>.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}</code></pre>
+
+            <h3>justify-content</h3>
+            <pre><code>flex-start
+flex-end
+center
+space-between
+space-around
+space-evenly</code></pre>
+
+            <h3>align-items</h3>
+            <pre><code>flex-start
+center
+flex-end</code></pre>
+
+            <h3>Centrar cualquier elemento</h3>
+            <pre><code>display: flex;
+justify-content: center;
+align-items: center;</code></pre>
+
+            <h3>Dirección</h3>
+            <pre><code>flex-direction: row;
+flex-direction: column;</code></pre>
+        </section>
+
+        <section id="grid" class="apartado">
+            <h2>4. GRID — Filas y columnas</h2>
+            <p><b>GRID = ideal para estructuras de filas y columnas.</b></p>
+
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></pre>
+
+            <h3>Variantes</h3>
+            <pre><code>grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 100px 200px;
+
+grid-template-columns:
+repeat(auto-fit, minmax(250px, 1fr));</code></pre>
+        </section>
+
+        <section id="bootstrap" class="apartado">
+            <h2>5. BOOTSTRAP</h2>
+
+            <h3>Agregar Bootstrap</h3>
+            <pre><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</code></pre>
+
+            <h3>Grid de Bootstrap</h3>
+            <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+            Columna
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+            Columna
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <p><b>col-12</b> = celular · <b>col-md-6</b> = tablet · <b>col-lg-4</b> = pantalla grande.</p>
+
+            <h3>Clases esenciales</h3>
+            <pre><code>p-3  m-3  mt-3  mb-3  ms-3  me-3
+px-3 py-3
+
+d-flex
+justify-content-center
+justify-content-between
+align-items-center
+flex-column
+gap-3
+
+text-center
+fw-bold
+fs-1
+fs-2
+
+text-primary
+text-danger
+text-success
+bg-dark
+bg-light
+
+btn
+btn-primary
+btn-danger
+btn-success</code></pre>
+        </section>
+
+        <section id="responsive" class="apartado">
+            <h2>6. RESPONSIVE DESIGN</h2>
+            <p>La página se adapta a celular, tablet y computador.</p>
+
+            <h3>Media Query</h3>
+            <pre><code>@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}</code></pre>
+
+            <h3>Responsive sin Media Query</h3>
+            <pre><code>.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.titulo {
+    font-size: clamp(20px, 4vw, 50px);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+}</code></pre>
+
+            <p>Breakpoints comunes: <b>1200px</b> PC · <b>992px</b> laptop/tablet · <b>768px</b> tablet · <b>576px</b> celular.</p>
+        </section>
+
+        <section id="three" class="apartado">
+            <h2>7. THREE.JS — 3D</h2>
+
+            <h3>Importar Three.js</h3>
+            <pre><code>import * as THREE from 'https://esm.sh/three@0.158.0';</code></pre>
+
+            <h3>Conceptos básicos</h3>
+            <pre><code>const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+);
+
+camera.position.set(0, 2, 5);
+
+const renderer = new THREE.WebGLRenderer({
+    antialias: true
+});
+
+renderer.setSize(
+    window.innerWidth,
+    window.innerHeight
+);
+
+document.body.appendChild(renderer.domElement);</code></pre>
+
+            <h3>Crear un cubo</h3>
+            <pre><code>const geometry = new THREE.BoxGeometry(1, 1, 1);
+
+const material = new THREE.MeshBasicMaterial({
+    color: 0xff0000
+});
+
+const cube = new THREE.Mesh(
+    geometry,
+    material
+);
+
+scene.add(cube);</code></pre>
+
+            <h3>Otras figuras</h3>
+            <pre><code>new THREE.BoxGeometry(1, 1, 1);
+new THREE.SphereGeometry(1, 32, 32);
+new THREE.CylinderGeometry(1, 1, 2, 32);
+new THREE.PlaneGeometry(10, 10);</code></pre>
+
+            <h3>Luces</h3>
+            <pre><code>const ambientLight =
+    new THREE.AmbientLight(0xffffff, 0.5);
+
+scene.add(ambientLight);
+
+const directionalLight =
+    new THREE.DirectionalLight(0xffffff, 1);
+
+directionalLight.position.set(5, 10, 5);
+scene.add(directionalLight);</code></pre>
+
+            <h3>Posición, rotación y escala</h3>
+            <pre><code>object.position.set(1, 2, 3);
+object.rotation.set(0, 1, 0);
+object.scale.set(2, 2, 2);</code></pre>
+
+            <h3>Animación</h3>
+            <pre><code>function animate() {
+    requestAnimationFrame(animate);
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    renderer.render(scene, camera);
+}
+
+animate();</code></pre>
+
+            <h3>Responsive de Three.js</h3>
+            <pre><code>window.addEventListener('resize', () => {
+    camera.aspect =
+        window.innerWidth / window.innerHeight;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+        window.innerWidth,
+        window.innerHeight
+    );
+});</code></pre>
+
+            <h3>Cargar modelos 3D</h3>
+            <p>Para modelos externos normalmente se utiliza un loader, por ejemplo <b>GLTFLoader</b> o <b>FBXLoader</b>.</p>
+        </section>
+
+        <section id="chuleta" class="apartado">
+            <h2>8. CHULETA FINAL</h2>
+
+            <div class="chuleta">
+                <p><b>HTML</b> → estructura</p>
+                <p><b>CSS</b> → apariencia</p>
+                <p><b>JavaScript</b> → comportamiento</p>
+                <p><b>Bootstrap</b> → CSS preparado</p>
+                <p><b>Three.js</b> → 3D</p>
+
+                <hr>
+
+                <p><b>FLEX</b> → elementos alineados en una dirección.</p>
+                <p><b>GRID</b> → filas + columnas.</p>
+                <p><b>POSITION</b> → colocar elementos exactamente.</p>
+                <p><b>MARGIN</b> → espacio afuera.</p>
+                <p><b>PADDING</b> → espacio adentro.</p>
+                <p><b>MEDIA QUERY</b> → responsive.</p>
+                <p><b>OBJECT-FIT</b> → controlar imágenes.</p>
+                <p><b>BACKGROUND</b> → fondos.</p>
+                <p><b>HOVER</b> → efecto al pasar el mouse.</p>
+
+                <hr>
+
+                <h3>Al replicar una página:</h3>
+                <pre><code>BODY
+├── HEADER
+│   ├── Logo
+│   └── Menú
+├── HERO
+│   ├── Título
+│   ├── Texto
+│   ├── Botón
+│   └── Imagens
+├── SECTION
+│   ├── Título
+│   └── CARDS
+├── SECTION
+│   └── Imagen + Texto
+└── FOOTER</code></pre>
+
+                <h3>Las propiedades que más debes memorizar</h3>
+                <p class="lista">display · flex · grid · justify-content · align-items · gap · margin · padding · width · height · max-width · position · top · right · background · color · font-size · border-radius · box-shadow · @media</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Repaso rápido — Diseño y Desarrollo Web</p>
+    </footer>
+
+</body>
+</html>
